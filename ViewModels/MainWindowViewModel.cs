@@ -75,7 +75,8 @@ namespace WpfMVVMsurgeCarentCalculater.ViewModels
         public ICommand AddCommand { get; } //доступно только для чтения
         private void OnAddCommandExecute(object p)
         {
-            TB_UT1_50 = (RPNT1_50_sld + TB_U110_50).ToString();
+            TB_UT1_50 =  Calculate.GetU27_5(tb_U110_50, Calculate.ConvertRPN(RPNT1_50_sld)).ToString();
+
 
         }
         private bool CanAddCommandExecuted(object p)
