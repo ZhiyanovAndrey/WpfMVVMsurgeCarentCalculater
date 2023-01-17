@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfMVVMsurgeCarentCalculater.ViewModels;
 
 namespace WpfMVVMsurgeCarentCalculater
 {
@@ -23,6 +24,14 @@ namespace WpfMVVMsurgeCarentCalculater
         public MainWindow()
         {
             InitializeComponent();
+
+            //устанавливаем значения по умолчанию
+            MainWindowViewModel vm= new MainWindowViewModel();
+            vm.RPNT1_50_sld = 14;
+            vm.RPNT24_51_sld= 13;
+            vm.RPNT24_51_sld= 13;   
+            vm.RPNT24_52_sld = 14;
+
         }
     }
 }
