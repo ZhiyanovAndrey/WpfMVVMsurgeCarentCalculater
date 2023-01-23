@@ -20,6 +20,7 @@ namespace WpfMVVMsurgeCarentCalculater.ViewModels
         }
 
 
+
         //1 значение напряжения 110 кВ ЭЧЭ-50
         private double tb_U110_50;
         public double TB_U110_50
@@ -188,10 +189,10 @@ namespace WpfMVVMsurgeCarentCalculater.ViewModels
         private void OnAddCommandExecute(object p)
         {
             UT1_50 = Calculate.GetU27_5(tb_U110_50, Calculate.ConvertRPN(rpnT1_50_sld));
-            TB_UT1_50 = UT1_50.ToString();
+            TB_UT1_50 = UT1_50.ToString("F2");
 
             UT24_51 = Calculate.GetU27_5(tb_U110_51, Calculate.ConvertRPN(rpnT24_51_sld));
-            TB_UT24_51 = UT24_51.ToString();
+            TB_UT24_51 = UT24_51.ToString("F2");
 
             UT15_51 = Calculate.GetU27_5(tb_U110_51, Calculate.ConvertRPN(rpnT15_51_sld));
             TB_UT15_51 = UT15_51.ToString("F2");

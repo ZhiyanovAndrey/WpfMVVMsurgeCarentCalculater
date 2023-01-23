@@ -57,34 +57,32 @@
 
         <Label Grid.Row="2" Content="Положение РПН" VerticalContentAlignment="Center" FontSize="14" />
         <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding ElementName=RPNT1_50_sld, Path=Value}" Style="{StaticResource textbl}"/>
-        <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding ElementName=RPNT24_51_sld, Path=Value}" Style="{StaticResource textbl}"/>
-        <TextBox Grid.Row="2" Grid.Column="3" Text="{Binding ElementName=RPNT15_51_sld, Path=Value}" Style="{StaticResource textbl}"/>
-        <TextBox Grid.Row="2" Grid.Column="4" Text="{Binding ElementName=RPNT24_52_sld, Path=Value}" Style="{StaticResource textbl}"/>
+        <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding ElementName=RPNT24_51_sld, Path=Value, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource textbl}"/>
+        <TextBox Grid.Row="2" Grid.Column="3" Text="{Binding ElementName=RPNT15_51_sld, Path=Value, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource textbl}"/>
+        <TextBox Grid.Row="2" Grid.Column="4" Text="{Binding ElementName=RPNT24_52_sld, Path=Value, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource textbl}"/>
 
-        <Slider x:Name="RPNT1_50_sld" Grid.Row="3" Grid.Column="1" Margin="5 0 5 0 " Value="{Binding Path=RPNT1_50_sld}"
+        <Slider x:Name="RPNT1_50_sld" Grid.Row="3" Grid.Column="1" Margin="5 0 5 0 " Value="{Binding Path=RPNT1_50_sld,UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                 Maximum="19" TickFrequency="1" TickPlacement="BottomRight" IsSnapToTickEnabled="True"  />
-        <Slider x:Name="RPNT24_51_sld"  Grid.Row="3" Grid.Column="2" Margin="5 0 5 0 " Value="{Binding Path=RPNT24_51_sld}"
+        <Slider x:Name="RPNT24_51_sld"  Grid.Row="3" Grid.Column="2" Margin="5 0 5 0 " Value="{Binding Path=RPNT24_51_sld, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                 Maximum="19" TickFrequency="1" TickPlacement="BottomRight" IsSnapToTickEnabled="True"  />
-        <Slider x:Name="RPNT15_51_sld"  Grid.Row="3" Grid.Column="3" Margin="5 0 5 0 " Value="{Binding Path=RPNT15_51_sld}"
+        <Slider x:Name="RPNT15_51_sld"  Grid.Row="3" Grid.Column="3" Margin="5 0 5 0 " Value="{Binding Path=RPNT15_51_sld, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                 Maximum="19" TickFrequency="1" TickPlacement="BottomRight" IsSnapToTickEnabled="True"  />
-        <Slider x:Name="RPNT24_52_sld"  Grid.Row="3" Grid.Column="4" Margin="5 0 5 0 " Value="{Binding Path=RPNT24_52_sld}"
+        <Slider x:Name="RPNT24_52_sld"  Grid.Row="3" Grid.Column="4" Margin="5 0 5 0 " Value="{Binding Path=RPNT24_52_sld, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                 Maximum="19" TickFrequency="1" TickPlacement="BottomRight" IsSnapToTickEnabled="True"  />
 
         <TextBlock Grid.Row="4" Text="Напряжение на шинах 27.5 кВ" VerticalAlignment="Center" FontSize="14" TextWrapping="Wrap" />
-        <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding Path=TB_UT1_50}" x:Name="TB_UT1_50" Style="{StaticResource textbl}"/>
+        <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding Path=TB_UT1_50}"  Style="{StaticResource textbl}"/>
         <TextBlock Grid.Row="4" Grid.Column="2" Text="{Binding Path=TB_UT24_51}" Style="{StaticResource textbl}"/>
         <TextBlock Grid.Row="4" Grid.Column="3" Text="{Binding Path=TB_UT15_51}" Style="{StaticResource textbl}"/>
         <TextBlock Grid.Row="4" Grid.Column="4" Text="{Binding Path=TB_UT24_52}" Style="{StaticResource textbl}"/>
 
         <Label Grid.Row="5" Content="Уравнительный ток, А" VerticalContentAlignment="Center" FontSize="14" />
         <TextBlock Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Path=TB_I5051}" Style="{StaticResource textbl}" />
-        <TextBlock Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2" Text="{Binding Path=TB_I5152}" Style="{StaticResource textbl}"/>
+        <TextBlock Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="2" Text="{Binding Path=TB_I5152}" Style="{StaticResource textbl}"/>
 
 
         <Button  Content="Расчет"  Command="{Binding Path=AddCommand}" HorizontalContentAlignment="Center" />
 
-
-        <!--1. Пункты меню <TextBlock Grid.Row="5" Grid.ColumnSpan="4" x:Name="message" Style="{StaticResource textbl}"/> -->
 
     </Grid>
 

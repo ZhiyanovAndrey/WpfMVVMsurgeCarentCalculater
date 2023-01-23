@@ -23,14 +23,19 @@ namespace WpfMVVMsurgeCarentCalculater
     {
         public MainWindow()
         {
-            InitializeComponent();
+            
+                 InitializeComponent();
 
             //устанавливаем значения по умолчанию
-            MainWindowViewModel vm= new MainWindowViewModel();
+
+            MainWindowViewModel vm = new MainWindowViewModel();
             vm.RPNT1_50_sld = 14;
-            vm.RPNT24_51_sld= 13;
-            vm.RPNT24_51_sld= 13;   
+            vm.RPNT24_51_sld = 13;
+            vm.RPNT15_51_sld = 13;
             vm.RPNT24_52_sld = 14;
+
+            DataContext= vm; // получить значения из MyPhone в любом элементе в пределах MainWindow
+
 
         }
     }
