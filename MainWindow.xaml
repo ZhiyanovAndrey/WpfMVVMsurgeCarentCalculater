@@ -51,14 +51,19 @@
 
 
         <Label Grid.Row="1" Content="Уровень напряжения 110 кВ" VerticalContentAlignment="Center" FontSize="14" />
-        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=TB_U110_50}" Style="{StaticResource textbl}" />
-        <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding Path=TB_U110_51}" Grid.ColumnSpan="2" Style="{StaticResource textbl}" />
+      
+        <TextBox Grid.Row="1" Grid.Column="1" Style="{StaticResource textbl}" Text="{Binding Path=TB_U110_50}">
+            <TextBox.InputBindings>
+                <KeyBinding Command="{Binding AddCommand}" Gesture="Enter" />
+            </TextBox.InputBindings>
+        </TextBox>
+        <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding Path=TB_U110_51, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Grid.ColumnSpan="2" Style="{StaticResource textbl}" />
         <TextBox Grid.Row="1" Grid.Column="4" Text="{Binding Path=TB_U110_52}" Style="{StaticResource textbl}" />
 
         <Label Grid.Row="2" Content="Положение РПН" VerticalContentAlignment="Center" FontSize="14" />
         <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding ElementName=RPNT1_50_sld, Path=Value}" Style="{StaticResource textbl}"/>
-        <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding ElementName=RPNT24_51_sld, Path=Value, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource textbl}"/>
-        <TextBox Grid.Row="2" Grid.Column="3" Text="{Binding ElementName=RPNT15_51_sld, Path=Value, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource textbl}"/>
+        <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding ElementName=RPNT24_51_sld, Path=Value}" Style="{StaticResource textbl}"/>
+        <TextBox Grid.Row="2" Grid.Column="3" Text="{Binding ElementName=RPNT15_51_sld, Path=Value}" Style="{StaticResource textbl}"/>
         <TextBox Grid.Row="2" Grid.Column="4" Text="{Binding ElementName=RPNT24_52_sld, Path=Value, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource textbl}"/>
 
         <Slider x:Name="RPNT1_50_sld" Grid.Row="3" Grid.Column="1" Margin="5 0 5 0 " Value="{Binding Path=RPNT1_50_sld,UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"

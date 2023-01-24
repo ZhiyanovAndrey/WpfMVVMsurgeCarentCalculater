@@ -29,6 +29,8 @@ namespace WpfMVVMsurgeCarentCalculater.ViewModels
             set
             {
                 tb_U110_50 = value;
+                UT1_50 = Calculate.GetU27_5(tb_U110_50, Calculate.ConvertRPN(rpnT1_50_sld));
+                TB_UT1_50 = UT1_50.ToString("F2");
                 OnPropertyChanged(); //Можем оставить скобки пустыми название Num само подставится, произойдет уведомление подписчиков о смене названия
             }
 
@@ -42,6 +44,12 @@ namespace WpfMVVMsurgeCarentCalculater.ViewModels
             set
             {
                 tb_U110_51 = value;
+                UT24_51 = Calculate.GetU27_5(tb_U110_51, Calculate.ConvertRPN(rpnT24_51_sld)); //расчет НН Т24 ЭЧЭ-51
+                TB_UT24_51 = UT24_51.ToString("F2");
+
+                UT15_51 = Calculate.GetU27_5(tb_U110_51, Calculate.ConvertRPN(rpnT15_51_sld)); //расчет НН Т15 ЭЧЭ-51
+                TB_UT15_51 = UT15_51.ToString("F2");
+
                 OnPropertyChanged();
             }
 
@@ -55,6 +63,8 @@ namespace WpfMVVMsurgeCarentCalculater.ViewModels
             set
             {
                 tb_U110_52 = value;
+                UT24_52 = Calculate.GetU27_5(tb_U110_52, Calculate.ConvertRPN(rpnT24_52_sld)); //расчет НН Т24 ЭЧЭ-52
+                TB_UT24_52 = UT24_52.ToString("F2");
                 OnPropertyChanged();
             }
 
@@ -68,6 +78,7 @@ namespace WpfMVVMsurgeCarentCalculater.ViewModels
             set
             {
                 tb_UT1_50 = value;
+                TB_I5051 = Calculate.GetSurgeCurent(UT1_50, UT24_51, R50_51).ToString("F2");
                 OnPropertyChanged();
             }
         }
@@ -80,6 +91,7 @@ namespace WpfMVVMsurgeCarentCalculater.ViewModels
             set
             {
                 tb_UT24_51 = value;
+                TB_I5051 = Calculate.GetSurgeCurent(UT1_50, UT24_51, R50_51).ToString("F2");
                 OnPropertyChanged();
             }
         }
@@ -92,6 +104,7 @@ namespace WpfMVVMsurgeCarentCalculater.ViewModels
             set
             {
                 tb_UT15_51 = value;
+                TB_I5152 = Calculate.GetSurgeCurent(UT15_51, UT24_52, R51_52).ToString("F2");
                 OnPropertyChanged();
             }
         }
@@ -104,6 +117,7 @@ namespace WpfMVVMsurgeCarentCalculater.ViewModels
             set
             {
                 tb_UT24_52 = value;
+                TB_I5152 = Calculate.GetSurgeCurent(UT15_51, UT24_52, R51_52).ToString("F2");
                 OnPropertyChanged();
             }
         }
@@ -116,6 +130,8 @@ namespace WpfMVVMsurgeCarentCalculater.ViewModels
             set
             {
                 rpnT1_50_sld = value;
+                UT1_50 = Calculate.GetU27_5(tb_U110_50, Calculate.ConvertRPN(rpnT1_50_sld)); //расчет НН Т1 ЭЧЭ-50
+                TB_UT1_50 = UT1_50.ToString("F2");
                 OnPropertyChanged();
             }
         }
@@ -128,6 +144,8 @@ namespace WpfMVVMsurgeCarentCalculater.ViewModels
             set
             {
                 rpnT24_51_sld = value;
+                UT24_51 = Calculate.GetU27_5(tb_U110_51, Calculate.ConvertRPN(rpnT24_51_sld)); //расчет НН Т24 ЭЧЭ-51
+                TB_UT24_51 = UT24_51.ToString("F2");
                 OnPropertyChanged();
             }
         }
@@ -140,6 +158,8 @@ namespace WpfMVVMsurgeCarentCalculater.ViewModels
             set
             {
                 rpnT15_51_sld = value;
+                UT15_51 = Calculate.GetU27_5(tb_U110_51, Calculate.ConvertRPN(rpnT15_51_sld)); //расчет НН Т15 ЭЧЭ-51
+                TB_UT15_51 = UT15_51.ToString("F2");
                 OnPropertyChanged();
             }
         }
@@ -152,6 +172,8 @@ namespace WpfMVVMsurgeCarentCalculater.ViewModels
             set
             {
                 rpnT24_52_sld = value;
+                UT24_52 = Calculate.GetU27_5(tb_U110_52, Calculate.ConvertRPN(rpnT24_52_sld)); //расчет НН Т24 ЭЧЭ-52
+                TB_UT24_52 = UT24_52.ToString("F2");
                 OnPropertyChanged();
             }
         }
@@ -188,16 +210,16 @@ namespace WpfMVVMsurgeCarentCalculater.ViewModels
         public ICommand AddCommand { get; } //доступно только для чтения
         private void OnAddCommandExecute(object p)
         {
-            UT1_50 = Calculate.GetU27_5(tb_U110_50, Calculate.ConvertRPN(rpnT1_50_sld));
+            UT1_50 = Calculate.GetU27_5(tb_U110_50, Calculate.ConvertRPN(rpnT1_50_sld)); //расчет НН Т1 ЭЧЭ-50
             TB_UT1_50 = UT1_50.ToString("F2");
 
-            UT24_51 = Calculate.GetU27_5(tb_U110_51, Calculate.ConvertRPN(rpnT24_51_sld));
+            UT24_51 = Calculate.GetU27_5(tb_U110_51, Calculate.ConvertRPN(rpnT24_51_sld)); //расчет НН Т24 ЭЧЭ-51
             TB_UT24_51 = UT24_51.ToString("F2");
 
-            UT15_51 = Calculate.GetU27_5(tb_U110_51, Calculate.ConvertRPN(rpnT15_51_sld));
+            UT15_51 = Calculate.GetU27_5(tb_U110_51, Calculate.ConvertRPN(rpnT15_51_sld)); //расчет НН Т15 ЭЧЭ-51
             TB_UT15_51 = UT15_51.ToString("F2");
 
-            UT24_52 = Calculate.GetU27_5(tb_U110_52, Calculate.ConvertRPN(rpnT24_52_sld));
+            UT24_52 = Calculate.GetU27_5(tb_U110_52, Calculate.ConvertRPN(rpnT24_52_sld)); //расчет НН Т24 ЭЧЭ-52
             TB_UT24_52 = UT24_52.ToString("F2");
 
             TB_I5051 = Calculate.GetSurgeCurent(UT1_50, UT24_51, R50_51).ToString("F2");
