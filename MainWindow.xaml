@@ -85,10 +85,6 @@
         <TextBlock Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Path=TB_I5051}" Style="{StaticResource textbl}" />
         <TextBlock Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="2" Text="{Binding Path=TB_I5152}" Style="{StaticResource textbl}"/>
 
-
-        <Button  Content="Расчет"  Command="{Binding Path=AddCommand}" HorizontalContentAlignment="Center" />
-
-
     </Grid>
 
 

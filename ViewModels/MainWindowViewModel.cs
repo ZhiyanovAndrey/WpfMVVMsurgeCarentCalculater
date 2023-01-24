@@ -207,36 +207,7 @@ namespace WpfMVVMsurgeCarentCalculater.ViewModels
         double UT1_50, UT24_51, UT15_51, UT24_52;
         
 
-        public ICommand AddCommand { get; } //доступно только для чтения
-        private void OnAddCommandExecute(object p)
-        {
-            UT1_50 = Calculate.GetU27_5(tb_U110_50, Calculate.ConvertRPN(rpnT1_50_sld)); //расчет НН Т1 ЭЧЭ-50
-            TB_UT1_50 = UT1_50.ToString("F2");
 
-            UT24_51 = Calculate.GetU27_5(tb_U110_51, Calculate.ConvertRPN(rpnT24_51_sld)); //расчет НН Т24 ЭЧЭ-51
-            TB_UT24_51 = UT24_51.ToString("F2");
-
-            UT15_51 = Calculate.GetU27_5(tb_U110_51, Calculate.ConvertRPN(rpnT15_51_sld)); //расчет НН Т15 ЭЧЭ-51
-            TB_UT15_51 = UT15_51.ToString("F2");
-
-            UT24_52 = Calculate.GetU27_5(tb_U110_52, Calculate.ConvertRPN(rpnT24_52_sld)); //расчет НН Т24 ЭЧЭ-52
-            TB_UT24_52 = UT24_52.ToString("F2");
-
-            TB_I5051 = Calculate.GetSurgeCurent(UT1_50, UT24_51, R50_51).ToString("F2");
-            TB_I5152 = Calculate.GetSurgeCurent(UT15_51, UT24_52, R51_52).ToString("F2");
-
-        }
-        private bool CanAddCommandExecuted(object p)
-        {
-            return true;
-        }
-        public MainWindowViewModel()
-        {
-            AddCommand = new RelayCommand(OnAddCommandExecute, CanAddCommandExecuted); //действия которые мы определим в методах
-                                                                                       //через конструктор передадутся в команду
-                                                                                       //получится полноценная команда с 2-мя методами и событием
-
-        }
 
     }
 }
