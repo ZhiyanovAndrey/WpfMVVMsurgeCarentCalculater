@@ -23,8 +23,8 @@ namespace WpfMVVMsurgeCarentCalculater
     {
         public MainWindow()
         {
-            
-                 InitializeComponent();
+
+            InitializeComponent();
 
             //устанавливаем значения по умолчанию
 
@@ -33,8 +33,11 @@ namespace WpfMVVMsurgeCarentCalculater
             vm.RPNT24_51_sld = 13;
             vm.RPNT15_51_sld = 13;
             vm.RPNT24_52_sld = 14;
+            vm.R50_51 = 20.769;
+            vm.R51_52 = 25.1335;
 
-            DataContext= vm; // получить значения из MyPhone в любом элементе в пределах MainWindow
+
+            DataContext = vm; // получить значения из MyPhone в любом элементе в пределах MainWindow
 
 
         }

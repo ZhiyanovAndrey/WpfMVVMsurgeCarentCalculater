@@ -19,7 +19,7 @@ namespace WpfMVVMsurgeCarentCalculater.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(PropertyName));
         }
 
-
+        double UT1_50, UT24_51, UT15_51, UT24_52;
 
         //1 значение напряжения 110 кВ ЭЧЭ-50
         private double tb_U110_50;
@@ -78,7 +78,7 @@ namespace WpfMVVMsurgeCarentCalculater.ViewModels
             set
             {
                 tb_UT1_50 = value;
-                TB_I5051 = Calculate.GetSurgeCurent(UT1_50, UT24_51, R50_51).ToString("F2");
+                TB_I5051 = Calculate.GetSurgeCurent(UT1_50, UT24_51, r50_51).ToString("F2");
                 OnPropertyChanged();
             }
         }
@@ -91,7 +91,7 @@ namespace WpfMVVMsurgeCarentCalculater.ViewModels
             set
             {
                 tb_UT24_51 = value;
-                TB_I5051 = Calculate.GetSurgeCurent(UT1_50, UT24_51, R50_51).ToString("F2");
+                TB_I5051 = Calculate.GetSurgeCurent(UT1_50, UT24_51, r50_51).ToString("F2");
                 OnPropertyChanged();
             }
         }
@@ -203,11 +203,31 @@ namespace WpfMVVMsurgeCarentCalculater.ViewModels
             }
         }
 
-        const double R50_51 = 20.769, R51_52 = 25.1335; //сопротивления для расчета уравнительных токов
-        double UT1_50, UT24_51, UT15_51, UT24_52;
-        
+         //сопротивления участков контактной сети для расчета уравнительных токов
 
+        private double r50_51;
+        public double R50_51
+        {
+            get { return r50_51; }
+            set
+            {
+                r50_51 = value;
+                TB_I5051 = Calculate.GetSurgeCurent(UT1_50, UT24_51, r50_51).ToString("F2");
+                OnPropertyChanged();
+            }
+        }
 
+        private double r51_52;
+        public double R51_52
+        {
+            get { return r51_52; }
+            set
+            {
+                r51_52 = value;
+                TB_I5152 = Calculate.GetSurgeCurent(UT15_51, UT24_52, R51_52).ToString("F2");
+                OnPropertyChanged();
+            }
+        }
 
     }
 }
