@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
 using WpfMVVMsurgeCarentCalculater.Models;
 
 namespace WpfMVVMsurgeCarentCalculater.ViewModels
@@ -31,7 +25,7 @@ namespace WpfMVVMsurgeCarentCalculater.ViewModels
                 tb_U110_50 = value;
                 UT1_50 = Calculate.GetU27_5(tb_U110_50, Calculate.ConvertRPN(rpnT1_50_sld));
                 TB_UT1_50 = UT1_50.ToString("F2");
-                OnPropertyChanged(); //Можем оставить скобки пустыми название Num само подставится, произойдет уведомление подписчиков о смене названия
+                OnPropertyChanged(); //Можем оставить скобки пустыми название TB_UT1_50 само подставится, произойдет уведомление подписчиков о смене названия
             }
 
         }

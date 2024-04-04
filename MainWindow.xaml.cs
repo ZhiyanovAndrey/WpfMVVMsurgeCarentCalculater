@@ -37,7 +37,7 @@ namespace WpfMVVMsurgeCarentCalculater
             vm.R51_52 = 25.1335;
 
 
-            DataContext = vm; // получить значения из MyPhone в любом элементе в пределах MainWindow
+            DataContext = vm; // получить значения в любом элементе в пределах MainWindow
 
 
         }
