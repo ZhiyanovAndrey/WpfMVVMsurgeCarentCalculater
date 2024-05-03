@@ -15,6 +15,7 @@
 Ссылка для скачивания приложения: https://disk.yandex.ru/d/Ke2zV8IlKKCOcw
 
 
+P.S. Можно автоматизировать процесс заполнения ячеек в ручную добавив соединение с базой данных куда вписываются среднее значение за пол года
 
 
 <!--This a WPF application with MVVM with out any button. We need to fill two feelds to see a result (current betwin substations).
